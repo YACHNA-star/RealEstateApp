@@ -1,0 +1,35 @@
+﻿<!-- Views/Home/Index.cshtml -->
+@model IEnumerable<Property>
+
+@foreach (var property in Model)
+{
+    <div>
+        <h2>@property.Place</h2>
+        <p>@property.Area</p>
+        <p>@property.Bedrooms bedrooms</p>
+        <p>@property.Bathrooms bathrooms</p>
+        <p>Likes: <span id="like-count-@property.Id">@property.Likes</span></p>
+        <button onclick="likeProperty(@property.Id)">Like</button>
+        <button onclick="showInterest(@property.Id)">I'm Interested</button>
+    </div>
+}
+<script>
+    function likeProperty(propertyId) {
+        fetch(`/Property/Like/${propertyId}`, {
+            method: 'POST'
+        }).then(response => response.json())
+          .then(data => {
+              document.getElementById(`like-count-${propertyId}`).innerText = data.likes;
+          });
+    }
+
+    function showInterest(propertyId) {
+        fetch(`/Home/ShowInterest/${propertyId}`, {
+            method: 'POST'
+        }).then(response => response.json())
+          .then(data => {
+              alert(`Seller Email: ${data.sellerEmail}\nSeller Phone: ${data.sellerPhone}`);
+          });
+    }
+</script>
+

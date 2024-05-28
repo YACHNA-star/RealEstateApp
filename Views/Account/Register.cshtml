@@ -1,0 +1,49 @@
+﻿<!-- Views/Account/Register.cshtml -->
+@model User
+<div class="row">
+  <div class=" col-6">
+   <div class="card">
+      <div class="card-header">
+                <h5>Register Form</h5>
+            </div>
+            <div class="card-body">
+<form asp-action="Register" method="post">
+    <div class="mb-3">
+        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IsSeller"></label>
+                        <input asp-for="IsSeller" type="checkbox"/>
+        <span asp-validation-for="IsSeller"></span>
+    </div>
+    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+﻿<!-- Views/Account/Login.cshtml -->
+<div class="row">
+    <div class=" col-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Please Do Login...</h5>
+            </div>
+   <div class="card-body">
+    <form asp-controller="Account" asp-action="Login" method="post">
+    <div class="mb-3">
+            <label class="form-label">Email</label>
+                        <input name="email" class="form-control" />
+                    </div>
+    <div class="mb-3">
+            <label class="form-label">Password</label>
+                        <input name="password" type="password" class="form-control" />
+    </div>
+    <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+     </form>
+    </div>
+   </div>
+  </div>
+
+</div>

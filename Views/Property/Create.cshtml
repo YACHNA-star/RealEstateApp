@@ -1,0 +1,59 @@
+﻿<!-- Views/Property/Create.cshtml -->
+@model RealEstateApp.Models.Property
+
+@{
+    ViewData["Title"] = "Create Property";
+}
+
+<div class="row">
+    <div class=" col-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Fill Property Details</h5>
+            </div>
+            <div class="card-body">
+<form asp-controller="Property" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Place"></label>
+        <input asp-for="Place" class="form-control" />
+        <span asp-validation-for="Place"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Area"></label>
+        <input asp-for="Area" class="form-control" />
+        <span asp-validation-for="Area"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Bedrooms"></label>
+        <input asp-for="Bedrooms" class="form-control" />
+        <span asp-validation-for="Bedrooms"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Bathrooms"></label>
+        <input asp-for="Bathrooms" class="form-control" />
+        <span asp-validation-for="Bathrooms"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NearbyHospitals"></label>
+        <input asp-for="NearbyHospitals" class="form-control" />
+        <span asp-validation-for="NearbyHospitals"></span>
+    </div>
+    <div class ="mb-3">
+        <label asp-for="NearbyColleges"></label>
+        <input asp-for="NearbyColleges" class="form-control" />
+        <span asp-validation-for="NearbyColleges"></span>
+    </div>
+    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Post Property</button>
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
